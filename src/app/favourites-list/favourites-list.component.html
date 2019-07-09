@@ -1,0 +1,28 @@
+<div class="container">
+  <app-category *ngFor="let category of categories; let i = index" [category]="category" [last]="i === 3 || i == 7"></app-category>
+
+  <div *ngIf="!this.full" class="category" id="add-category" (click)="showAddCategory = !showAddCategory">
+    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+      <path d="M0 0h24v24H0z" fill="none"/>
+      <path fill="white" d="M13 7h-2v4H7v2h4v4h2v-4h4v-2h-4V7zm-1-5C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8z"/>
+    </svg>
+  </div>
+</div>
+
+<div id="add-category-form"  *ngIf="this.showAddCategory">
+  <h1>Add new Category</h1>
+  <form [formGroup]="addCategoryForm" spellcheck="false" (ngSubmit)="addCategory(addCategoryForm.value)">
+    <div>
+      <div id="selector">
+        <label for="add-category-input">
+          Name:
+        </label>
+        <input type="text" autofocus autocomplete="false" formControlName="name" id="add-category-input">
+      </div>
+    </div>
+    <div id="buttons">
+      <button class="cancel-button" (click)="showAddCategory = !showAddCategory">cancel</button>
+      <button class="submit-button" [class.disabled]="!addCategoryForm.valid" [disabled]="!addCategoryForm.valid" type="submit">add</button>
+    </div>
+  </form>
+</div>

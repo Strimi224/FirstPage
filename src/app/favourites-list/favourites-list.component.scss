@@ -1,0 +1,147 @@
+.container {
+    position: absolute;
+
+    display: inline-grid;
+    grid-template-columns: 15vw 15vw 15vw 15vw;
+    grid-template-rows: auto auto;
+
+
+    width: 60vw;
+    height: 60vh;
+
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+
+    #add-category {
+        display: flex;
+
+        align-items: center;
+        justify-content: center;
+
+        height: 30vh;
+
+        svg {
+            width: 7vw;
+            height: 7vh;
+
+            fill: rgb(209, 209, 209);
+
+            transform: scale(1);
+            transition: transform 150ms ease-in;
+        }
+    }
+
+    #add-category:hover svg {
+        transform: scale(1.2);
+    }
+
+}
+
+#add-category-form {
+    position: absolute;
+    z-index: 3;
+
+    top: 50%;
+    left: 50%;
+
+    background-color: rgb(37, 37, 37);
+
+    border-radius: 5px;
+
+    width: 20vw;
+    height: 210px;
+
+    transform: translate(-50%, -50%);
+
+    h1 {
+        font-family: 'Montserrat', sans-serif;
+        color: #FFFFFF;
+        font-size: 1.5rem;
+
+        margin-top: 1.5rem;
+
+        text-align: center;
+
+    }
+
+    form {
+        position: relative;
+
+        div {
+            display: flex;
+
+            margin-top: 4%;
+            justify-content: center;
+
+
+
+            width: 100%;
+
+            #selector {
+                background-color: rgb(22, 22, 22);
+
+                width: min-content;
+
+                border-radius: 4px;
+
+                label {
+                    color: #FFFFFF;
+                    font-family: 'Montserrat', sans-serif;
+                    margin: 10px;
+                    margin-right: 5px;
+                }
+
+                input {
+                    border: none;
+                    background-color: transparent;
+                    height: 100%;
+
+                    font-family: 'Montserrat', sans-serif;
+                    color: #FFFFFF;
+                }
+
+                input:focus {
+                    outline: none;
+                }
+            }
+        }
+
+        #buttons {
+            display: flex;
+
+            margin-top: 8%;
+
+            justify-items: center;
+            align-content: center;
+
+            width: 100%;
+
+            button {
+                width: 29%;
+                height: 25px;
+                border: none;
+                border-radius: 5px;
+            }
+
+            .cancel-button {
+                margin-right: 1%;
+                color: #FFFFFF;
+
+                background-color: rgb(70, 70, 70);
+            }
+
+            .submit-button {
+                margin-left: 1%;
+                color: #FFFFFF;
+
+                background-color: rgb(93, 155, 74);
+            }
+
+            .disabled {
+                background-color: rgb(255, 0, 0);
+            }
+        }
+    }
+}

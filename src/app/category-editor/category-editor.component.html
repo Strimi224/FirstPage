@@ -1,0 +1,17 @@
+<div class="container">
+    <form [formGroup]="changeNameForm" id="name-form" spellcheck="false">
+        <input autofocus type="text" id="name-input" formControlName="name">
+    </form>
+
+    <p>Add a new Link</p>
+    <form [formGroup]="addLinkForm" id="addLinkForm" spellcheck="false">
+        <input autofocus type="text" id="new-link-name-input" class="input" formControlName="newLinkName" placeholder="Name">
+        <input autofocus type="text" id="new-link-path-input" class="input" formControlName="newLinkPath" placeholder="Path">
+    </form>
+    <div cdkDropList class="list">
+        <app-category-editor-link *ngFor="let link of category.links"></app-category-editor-link>
+    </div>
+    <button id="cancel-button" (click)="closeWindow()">cancel</button>
+    <button id="apply-button">apply</button>
+    <button id="delete-button">delete</button>
+</div>
