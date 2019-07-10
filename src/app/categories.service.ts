@@ -13,34 +13,34 @@ export class CategoriesService {
   constructor() {
     this.categories = [
       new Category(' work ', [
-        new Link("https://www.youtube.com", "YouTube"),
-        new Link("https://www.youtube.com", "YouTube"),
-        new Link("https://www.youtube.com", "YouTube"),
-        new Link("https://www.youtube.com", "YouTube"),
-        new Link("https://www.youtube.com", "YouTube"),
-        new Link("https://www.youtube.com", "YouTube"),
-        new Link("https://www.youtube.com", "YouTube"),
-        new Link("https://www.youtube.com", "YouTube"),
-        new Link("https://www.youtube.com", "YouTube"),
-        new Link("https://www.youtube.com", "YouTube"),
-        new Link("https://www.youtube.com", "YouTube"),
-        new Link("https://www.youtube.com", "YouTube"),
-        new Link("https://www.youtube.com", "YouTube"),
-        new Link("https://www.youtube.com", "YouTube"),
-        new Link("https://www.youtube.com", "YouTube"),
-        new Link("https://www.youtube.com", "YouTube"),
-        new Link("https://www.youtube.com", "YouTube"),
-        new Link("https://www.youtube.com", "YouTube"),
-        new Link("https://www.youtube.com", "YouTube"),
-        new Link("https://www.youtube.com", "YouTube"),
-        new Link("https://www.youtube.com", "YouTube"),
-        new Link("https://www.youtube.com", "YouTube"),
-        new Link("https://www.youtube.com", "YouTube"),
-        new Link("https://www.youtube.com", "YouTube"),
-        new Link("https://www.youtube.com", "YouTube")
+        new Link('https://www.youtube.com', 'YouTube'),
+        new Link('https://www.youtube.com', 'YouTube'),
+        new Link('https://www.youtube.com', 'YouTube'),
+        new Link('https://www.youtube.com', 'YouTube'),
+        new Link('https://www.youtube.com', 'YouTube'),
+        new Link('https://www.youtube.com', 'YouTube'),
+        new Link('https://www.youtube.com', 'YouTube'),
+        new Link('https://www.youtube.com', 'YouTube'),
+        new Link('https://www.youtube.com', 'YouTube'),
+        new Link('https://www.youtube.com', 'YouTube'),
+        new Link('https://www.youtube.com', 'YouTube'),
+        new Link('https://www.youtube.com', 'YouTube'),
+        new Link('https://www.youtube.com', 'YouTube'),
+        new Link('https://www.youtube.com', 'YouTube'),
+        new Link('https://www.youtube.com', 'YouTube'),
+        new Link('https://www.youtube.com', 'YouTube'),
+        new Link('https://www.youtube.com', 'YouTube'),
+        new Link('https://www.youtube.com', 'YouTube'),
+        new Link('https://www.youtube.com', 'YouTube'),
+        new Link('https://www.youtube.com', 'YouTube'),
+        new Link('https://www.youtube.com', 'YouTube'),
+        new Link('https://www.youtube.com', 'YouTube'),
+        new Link('https://www.youtube.com', 'YouTube'),
+        new Link('https://www.youtube.com', 'YouTube'),
+        new Link('https://www.youtube.com', 'YouTube')
       ]),
-      new Category(' work ', [new Link("https://www.youtube.com", "YouTube")]),
-      new Category(' work ', [new Link("https://www.youtube.com", "YouTube")])
+      new Category(' work ', [new Link('https://www.youtube.com', 'YouTube')]),
+      new Category(' work ', [new Link('https://www.youtube.com', 'YouTube')])
     ];
 
     this.callbacks = [];
@@ -56,7 +56,7 @@ export class CategoriesService {
   }
 
   removeCategory(category: Category) {
-    for( var i = 0; i < this.categories.length; i++ ) {
+    for ( let i = 0; i < this.categories.length; i++ ) {
       if ( this.categories[i] === category ) {
         this.categories.splice(i, 1);
         i--;
@@ -73,6 +73,6 @@ export class CategoriesService {
   pushOutCallbacks() {
     this.callbacks.forEach(callback => {
       callback(this.categories.length === 8);
-    })
+    });
   }
 }

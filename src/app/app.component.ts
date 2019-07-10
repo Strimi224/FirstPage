@@ -9,18 +9,18 @@ import { timer } from 'rxjs';
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss']
 })
-export class AppComponent implements OnDestroy, OnInit{
+export class AppComponent implements OnDestroy, OnInit {
 
-  private placeholderText = "";
+  private placeholderText = '';
   private inputForm: FormGroup;
   private clockSub: Subscription;
   private favourites = true;
   private editing = false;
 
 
-  constructor (private formBuilder: FormBuilder) {
+  constructor(private formBuilder: FormBuilder) {
     this.inputForm = this.formBuilder.group({
-      input: ""
+      input: ''
     });
   }
 
@@ -29,7 +29,7 @@ export class AppComponent implements OnDestroy, OnInit{
   }
 
   ngOnInit() {
-    let clock = timer(0, 900);
+    const clock = timer(0, 900);
 
     this.clockSub = clock.subscribe(tick => {
       this.setTime();
@@ -37,8 +37,8 @@ export class AppComponent implements OnDestroy, OnInit{
   }
 
   onSearch(inputData) {
-    if (inputData.input.startsWith("www.")) {
-      window.open("https://" + inputData.input);
+    if (inputData.input.startsWith('www.')) {
+      window.open('https://' + inputData.input);
     } else {
       window.open('https://google.com/search?q=' + inputData.input); // searches in google
     }
@@ -46,14 +46,14 @@ export class AppComponent implements OnDestroy, OnInit{
   }
 
   setTime() {
-    let today = new Date();
-    let h = today.getHours();
-    let m:any = today.getMinutes();
-    let s:any = today.getSeconds();
+    const today = new Date();
+    const h = today.getHours();
+    let m: any = today.getMinutes();
+    let s: any = today.getSeconds();
 
-    if (m < 10) {m = "0" + m};// for some reason it doesn't function with a function
-    if (s < 10) {s = "0" + s};
+    if (m < 10) {m = '0' + m;}// for some reason it doesn't function with a function
+    if (s < 10) {s = '0' + s;}
 
-    this.placeholderText = h + ":" + m + ":" + s;
+    this.placeholderText = h + ':' + m + ':' + s;
   }
 }

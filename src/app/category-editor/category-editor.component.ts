@@ -19,17 +19,17 @@ export class CategoryEditorComponent implements OnInit, OnDestroy {
 
 
     if (this.category === undefined) {
-      this.category = new Category("", []);
+      this.category = new Category('', []);
     }
 
     this.changeNameForm = this.formBuilder.group({
-      name: ["", Validators.required]
+      name: ['', Validators.required]
     });
 
     this.addLinkForm = this.formBuilder.group({
-      newLinkName: ["", Validators.required],
-      newLinkPath: ["", Validators.required]
-    })
+      newLinkName: ['', Validators.required],
+      newLinkPath: ['', Validators.required]
+    });
   }
 
   ngOnInit() {
