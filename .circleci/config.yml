@@ -10,7 +10,7 @@ jobs: # basic units of work in a run
       - run: 
           name: "Setup custom environment variables"
           command: |
-            echo 'export FIREBASE_TOKEN="FOO"' >> $BASH_ENV # Redirect FIREBASE_TOKEN into $BASH_ENV
+            echo 'export FIREBASE_TOKEN="1/s7zRbLB95QEEsxMKtOvqlX8eWtlZUOoxxYLxISPMpFQ"' >> $BASH_ENV # Redirect FIREBASE_TOKEN into $BASH_ENV
       # Run a step to print what branch our code base is on.
       - run: # test what branch we're on.
           name: "What branch am I on?"
