@@ -9,7 +9,7 @@ import { Component, OnInit, Input } from '@angular/core';
 export class LinkComponent implements OnInit {
 
   @Input() link: Link;
-  getFav: string = 'https://plus.google.com/_/favicon?domain_url=';
+  getFav = 'https://plus.google.com/_/favicon?domain_url=';
 
   constructor() { }
 

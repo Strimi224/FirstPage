@@ -51,8 +51,13 @@ export class AppComponent implements OnDestroy, OnInit {
     let m: any = today.getMinutes();
     let s: any = today.getSeconds();
 
-    if (m < 10) {m = '0' + m;}// for some reason it doesn't function with a function
-    if (s < 10) {s = '0' + s;}
+    // for some reason it doesn't function with a function
+    if (m < 10) {
+      m = '0' + m;
+    }
+    if (s < 10) {
+      s = '0' + s;
+    }
 
     this.placeholderText = h + ':' + m + ':' + s;
   }

@@ -18,7 +18,7 @@ export class FavouritesListComponent implements OnInit {
 
   constructor(public categoriesService: CategoriesService, private fb: FormBuilder) {
     this.addCategoryForm = fb.group({
-      'name': ['', Validators.required]
+      name: ['', Validators.required]
     });
 
     this.categoriesService.signIntoFullChangeCallback(full => {
