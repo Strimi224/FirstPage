@@ -52,6 +52,9 @@ jobs:
                 name: Install Firebase
                 command: npm install --save-dev firebase-tools
             - run:
+                name: Show firebase token
+                command: echo $FIREBASE_TOKEN
+            - run:
                 name: Deploy Master to Firebase
                 command: npm run firebase-deploy --token=$FIREBASE_TOKEN
 
