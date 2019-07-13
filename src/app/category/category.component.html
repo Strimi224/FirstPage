@@ -1,4 +1,4 @@
-<div class="category" [class.line]="this.category.links.length < 7 && !this.last" [class.edit-mode]="editMode">
+<div class="category" [class.line]="this.category.links.length < 7 && !this.last">
   <h1>{{category.name}}</h1> <!-- Add (click)="openEditWindow()" to open the edit window when ready-->
   <ul>
     <cdk-virtual-scroll-viewport itemSize="30">

@@ -14,8 +14,8 @@ export class AppComponent implements OnDestroy, OnInit {
   private placeholderText = '';
   private inputForm: FormGroup;
   private clockSub: Subscription;
-  private favourites = true;
-  private editing = false;
+  public favourites = true;
+  public editing = false;
 
 
   constructor(private formBuilder: FormBuilder) {
