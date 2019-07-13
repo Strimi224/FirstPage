@@ -1,7 +1,6 @@
-import { Component, Input, OnInit, OnDestroy } from '@angular/core';
-import { Category, Link } from '../category';
+import { Component, OnDestroy, OnInit, Inject } from '@angular/core';
+import { EDIT_CATEGORY_DIALOG_DATA } from '../edit-category-overlay.tokens';
 import { CategoriesService } from './../categories.service';
-import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-category-editor',
@@ -10,38 +9,15 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 })
 export class CategoryEditorComponent implements OnInit, OnDestroy {
 
-  @Input() category: Category;
-
-  changeNameForm: FormGroup;
-  addLinkForm: FormGroup;
-
-  constructor( public categoriesService: CategoriesService, public formBuilder: FormBuilder) {
-
-
-    if (this.category === undefined) {
-      this.category = new Category('', []);
-    }
-
-    this.changeNameForm = this.formBuilder.group({
-      name: ['', Validators.required]
-    });
-
-    this.addLinkForm = this.formBuilder.group({
-      newLinkName: ['', Validators.required],
-      newLinkPath: ['', Validators.required]
-    });
+  constructor(
+    public categoriesService: CategoriesService,
+    @Inject(EDIT_CATEGORY_DIALOG_DATA) public category: any
+    ) {
   }
 
   ngOnInit() {
   }
 
-  callback(category: Category) {
-  }
-
   ngOnDestroy() {
   }
-
-  closeWindow() {
-  }
-
 }

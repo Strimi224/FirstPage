@@ -1,13 +1,10 @@
-<div class="category" [class.line]="(this.category.links.length < 7 && !this.last) || this.editMode" [class.edit-mode]="editMode">
-  <h1 (click)="this.editMode = !this.editMode">{{category.name}}</h1>
-  <ul *ngIf="!editMode">
+<div class="category" [class.line]="this.category.links.length < 7 && !this.last" [class.edit-mode]="editMode">
+  <h1>{{category.name}}</h1> <!-- Add (click)="openEditWindow()" to open the edit window when ready-->
+  <ul>
     <cdk-virtual-scroll-viewport itemSize="30">
       <li *cdkVirtualFor="let link of category.links">
         <app-link [link]="link"></app-link>
       </li>
     </cdk-virtual-scroll-viewport>
   </ul>
-  <div class="edit-button-container">
-    <button *ngIf="editMode" (click)="openEditWindow()" class="edit-category-button">Edit Category</button>
-  </div>
 </div>

@@ -1,6 +1,6 @@
 import { ScrollingModule } from '@angular/cdk/scrolling';
 import { NgModule } from '@angular/core';
-import { ReactiveFormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AppComponent } from './app.component';
@@ -9,6 +9,7 @@ import { CategoryEditorComponent } from './category-editor/category-editor.compo
 import { CategoryComponent } from './category/category.component';
 import { FavouritesListComponent } from './favourites-list/favourites-list.component';
 import { LinkComponent } from './link/link.component';
+import { OverlayModule } from '@angular/cdk/overlay';
 
 
 @NgModule({
@@ -23,10 +24,15 @@ import { LinkComponent } from './link/link.component';
   imports: [
     BrowserModule,
     ReactiveFormsModule,
+    FormsModule,
     BrowserAnimationsModule,
     ScrollingModule,
+    OverlayModule
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
+  entryComponents: [
+    CategoryEditorComponent
+  ]
 })
 export class AppModule { }
