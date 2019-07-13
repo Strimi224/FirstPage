@@ -27,7 +27,7 @@ jobs:
                 command: npm run lint
             - run:
                 name: Testing
-                command: npm run test
+                command: ng tests --watch=false
             - run:
                 name: Building
                 command: npm run build-prod
