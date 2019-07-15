@@ -52,6 +52,12 @@ jobs:
                 name: Install Firebase
                 command: npm install --save-dev firebase-tools
             - run:
+                name: Show what is in the dist folder
+                command: ls dist/
+            - run: 
+                name: Show what is in the dist/FirstPage folder
+                command: ls dist/FirstPage/
+            - run:
                 name: Deploy Master to Firebase
                 command: ./node_modules/.bin/firebase deploy --token=$FIREBASE_TOKEN
 
