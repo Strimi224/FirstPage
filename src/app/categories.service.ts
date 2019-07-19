@@ -14,7 +14,7 @@ export class CategoriesService {
     this.categories = [
       new Category(' work ', [
         new Link('https://www.youtube.com', 'YouTube'),
-        new Link('https://www.youtube.com', 'YouTube'),
+        new Link('https://stackoverflow.com/', 'Stackoverflow'),
         new Link('https://www.youtube.com', 'YouTube'),
         new Link('https://www.youtube.com', 'YouTube'),
         new Link('https://www.youtube.com', 'YouTube'),

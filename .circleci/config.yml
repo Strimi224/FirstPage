@@ -3,7 +3,7 @@ jobs:
     build:
         working_directory: ~/project
         docker:
-            - image: circleci/node:10.15.3-browsers
+            - image: circleci/node:8.9.3-browsers
         steps:
             - checkout
             - run:
@@ -53,7 +53,7 @@ jobs:
                 command: npm install --save-dev firebase-tools
             - run:
                 name: Deploy Master to Firebase
-                command: npm run firebase-deploy --token=1/s7zRbLB95QEEsxMKtOvqlX8eWtlZUOoxxYLxISPMpFQ
+                command: npm run firebase-deploy
 
 workflows:
     version: 2

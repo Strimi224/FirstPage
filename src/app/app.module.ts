@@ -10,6 +10,7 @@ import { CategoryComponent } from './category/category.component';
 import { FavouritesListComponent } from './favourites-list/favourites-list.component';
 import { LinkComponent } from './link/link.component';
 import { OverlayModule } from '@angular/cdk/overlay';
+import { MatButtonModule, MatCheckboxModule } from '@angular/material';
 
 
 @NgModule({
@@ -27,7 +28,9 @@ import { OverlayModule } from '@angular/cdk/overlay';
     FormsModule,
     BrowserAnimationsModule,
     ScrollingModule,
-    OverlayModule
+    OverlayModule,
+    MatButtonModule,
+    MatCheckboxModule
   ],
   providers: [],
   bootstrap: [AppComponent],

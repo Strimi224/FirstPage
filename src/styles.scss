@@ -1,5 +1,6 @@
 /*You need to import this if the centering of the overlays is not functioning*/
 @import "~@angular/cdk/overlay-prebuilt.css";
+@import '@angular/material/prebuilt-themes/deeppurple-amber.css';
 
 html, body {
     width: 100%;
@@ -17,4 +18,8 @@ html, body {
         background: #000;
         opacity: 0.85 !important;
     }
+}
+
+.full-width {
+    width: 100%;
 }
